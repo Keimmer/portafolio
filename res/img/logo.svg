@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="80"
+   height="40"
+   viewBox="0 0 21.166667 10.583333"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <g
+     id="layer1">
+    <path
+       style="fill:#168aad;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="M 0.9087002,0.50483343 V 9.9452188 l 1.464017,-9.44038537 z"
+       id="path1798">
+       <animate attributeName="fill" from="#168aad" to="#fff" dur=".2s" begin="path1798.mouseover"/>
+       </path>
+    <path
+       style="fill:#52b69a;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 2.3727172,0.50483343 8.2770139,0.51187701 1.539742,6.0327597 Z"
+       id="path1800" />
+    <path
+       style="fill:#76c893;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="M 3.0290008,4.6444677 8.2792685,9.8947355 0.90870018,9.9452188 1.539742,6.0327597 Z"
+       id="path1802" />
+    <path
+       style="fill:#99d98c;stroke:none;stroke-width:0.261765px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="M 8.2770139,9.8953083 V 0.51187701 h 2.5003041 z"
+       id="path1804" />
+    <path
+       style="fill:#b5e48c;fill-opacity:1;stroke:none;stroke-width:0.261765px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 8.2770139,9.8953083 H 16.358805 L 13.612372,5.3129945 9.4640264,5.3698925 8.2770139,9.8953083"
+       id="path1810" />
+    <path
+       style="fill:#d9ed92;stroke:none;stroke-width:0.261765px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="m 9.8997987,3.8067067 1.0607353,1.5062878 h 2.651838 L 10.777318,0.51187701 Z"
+       id="path1925" />
+  </g>
+</svg>

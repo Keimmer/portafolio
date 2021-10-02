@@ -1,0 +1,163 @@
+/* estilos barra de navegacion */
+
+body {
+    font-family: Nunito Sans;
+    margin: 0px;
+}
+
+
+/* modificando los links */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* estilo del header */
+
+.header {
+    color: #fff;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background-color: #184e77;
+    top: 0;
+    left: 0;
+}
+
+
+/* estilo del footer */
+
+.footer {
+    height: 100px;
+    background-color: #184e77;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+/* estilos de los items del header */
+
+.headerItem {
+    display: flex;
+    margin-left: 20px;
+    justify-self: flex-end;
+}
+
+@media screen and (max-width: 600px) {
+    .headerItem {
+        display: none;
+    }
+}
+
+.dropDownMenu {
+    display: none;
+}
+
+.openDropDownMenu {
+    display: flex;
+    position: fixed;
+    right: 2px;
+    padding: 7px;
+    border-radius: 10px;
+    color: #fff;
+    flex-direction: column;
+    background-color: #1e6091;
+}
+
+.menu {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .menu {
+        cursor: pointer;
+        display: initial;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+}
+
+
+/* estilo del contenedor del logo */
+
+.logoContainer {
+    margin-left: 20px;
+    justify-self: flex-start;
+}
+
+
+/* estilos del contenedor del cuerpo de la pagina */
+
+.container {
+    background-color: #fefae0;
+    margin-top: 100px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    height: 2000px;
+}
+
+
+/* contenedor mas pequeño para elementos dentro del cuerpo de la pagina */
+
+.smallContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 0px;
+    }
+    .smallContainer {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 0px;
+    }
+    .projectContainer {
+        width: 200px;
+        margin: 5px;
+    }
+}
+
+
+/* contenedor tarjeta para los proyectos */
+
+.projectContainer {
+    height: 300px;
+    width: 250px;
+    border-radius: 15px;
+    margin: 30px;
+    padding: 20px;
+    background: linear-gradient(180deg, rgba(118, 200, 147, 1) 0%, rgba(181, 228, 140, 1) 46%, rgba(217, 237, 146, 1) 100%);
+}
+
+
+/* estilos de boton para los links */
+
+.btn {
+    background: #fff;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+
+/* estilos para el titulo de las tarjetas de proyecto */
+
+.projectContainer h5 {
+    background-color: #fff;
+    color: #000;
+    padding: 5px;
+    border-radius: 5px;
+}
