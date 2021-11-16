@@ -18,6 +18,8 @@ a {
 
 .header {
     color: #fff;
+    padding-left: 70px;
+    padding-right: 70px;
     position: fixed;
     display: flex;
     flex-direction: row;
@@ -27,6 +29,13 @@ a {
     background-color: #184e77;
     top: 0;
     left: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        padding-left: 10px;
+        padding-right: 20px;
+    }
 }
 
 
@@ -46,11 +55,16 @@ a {
 .headerItem {
     display: flex;
     margin-left: 20px;
-    justify-self: flex-end;
+}
+
+.headerItems {
+    display: flex;
+    margin-right: 200px;
+    margin-left: auto;
 }
 
 @media screen and (max-width: 600px) {
-    .headerItem {
+    .headerItems {
         display: none;
     }
 }
@@ -95,14 +109,14 @@ a {
 /* estilos del contenedor del cuerpo de la pagina */
 
 .container {
-    background-color: #fefae0;
+    background-color: #f5faff;
     margin-top: 100px;
     margin-left: 0px;
     margin-right: 0px;
     display: flex;
     flex-direction: column;
     padding: 30px;
-    height: 2000px;
+    height: 100%;
 }
 
 
@@ -116,7 +130,7 @@ a {
 
 @media screen and (max-width: 600px) {
     .container {
-        padding: 0px;
+        padding: 10px;
     }
     .smallContainer {
         display: flex;
@@ -148,8 +162,14 @@ a {
 .btn {
     background: #fff;
     cursor: pointer;
+    border: none;
     padding: 6px;
     border-radius: 5px;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
 }
 
 
@@ -160,4 +180,73 @@ a {
     color: #000;
     padding: 5px;
     border-radius: 5px;
+}
+
+/* estilo para los formularios */
+
+.form-card {
+     width: 400px;
+     border: #000;
+     background: linear-gradient(180deg, rgba(118, 200, 147, 1) 0%, rgba(181, 228, 140, 1) 46%, rgba(217, 237, 146, 1) 100%);
+     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+     border-radius: 25px;
+     margin: auto;
+     display: flex;
+     flex-direction: column;
+}
+.form-card > h2 {
+    color:#fff;
+    text-align: center;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.form-field {
+    display: flex;
+    font-size: 14px;
+    padding: 10px;
+    margin: auto;    
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 5px;
+}
+.form-btn {
+    display: flex;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.form-btn:hover {
+    background-color: #34a0a4;
+    color: #fff;
+}
+.error {
+    padding: 10px;
+    background-color: #f94144;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 800;
+    color: #fff;
+}
+.success {
+    padding: 10px;
+    background-color: #43aa8b;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 800;
+    color: #fff;
 }
