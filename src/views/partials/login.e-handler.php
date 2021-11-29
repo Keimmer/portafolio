@@ -3,20 +3,18 @@
     if (isset($_GET["error"])) {
         switch ($_GET["error"]) {
             case 'emptyinput':
-                echo "<p class='error'>Debes llenar todos los campos!.</p>";
+                return "Debes llenar los campos.";
                 break;
             case 'userOrEmailNotFound':
-                echo "<p class='error'>Nombre de usuario o correo electronico invalido!.</p>";
+                return "Nombre de usuario o correo electronico no existe!.";
                 break;
             case 'wrongPassword':
-                echo "<p class='error'>Contraseña invalida!.</p>";
+                return "Contraseña invalida.";
                 break;
             case 'databaseError':
-                echo "<p class='error'>Hubo un problema con la base de datos!.</p>";
-                break;
+                return "Error de comunicacion.";
             case 'none':
-                echo "<p class='success'>Cuenta creada con exito!.</p>";
-                break;
+                return "Login Correcto.";
             
             default:
                 # code...

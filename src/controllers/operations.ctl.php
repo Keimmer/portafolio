@@ -54,9 +54,9 @@ class DbController {
         return $result;
     }
 
-    function createUser($dbConn, $userName, $name, $lastName, $email, $password) {
+    function createUser($dbConn, $userName, $name, $lastName, $email, $password, $gender) {
         $hashPassword = password_hash($password, PASSWORD_BCRYPT);
-        if ($dbConn->insertUser($userName, $name, $lastName, $email, $hashPassword)) {
+        if ($dbConn->insertUser($userName, $name, $lastName, $email, $hashPassword, $gender)) {
             $result = true;
         }
         else {
@@ -67,7 +67,7 @@ class DbController {
 
     function emptyInputLogin($userName, $password) {
         $result;
-        if (empty($userName)|| empty($password)) {
+        if (empty($userName) || empty($password)) {
             $result = true;
         }
         else {
@@ -91,10 +91,16 @@ class DbController {
                 exit();
             } else if ($checkPass === true) {
                 session_start();
+                $_SESSION["userid"] = $userExists["user_id"];
                 $_SESSION["username"] = $userExists["username"];
                 $_SESSION["name"] = $userExists["name"];
-                header("location: /Portafolio/index.php");
+                header("location: /Portafolio/index.php?success=loginSucceded");
             }
         }
+    }
+
+    function createNewBlog($dbConn, $userid, $titulo, $imgPath, $subtitles, $parragraphs, $sources) {
+        $lastId = $dbConn->insertBlog($userid, $titulo, $imgPath);
+        $dbConn->insertParragraphs($lastId, $subtitles, $parragraphs, $sources);
     }
 }

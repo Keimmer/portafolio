@@ -15,7 +15,6 @@ if (isset($_POST["submit"])) {
 
     $ops->loginUser(new DbConnection, $userName, $password);
 } else {
-    //header("location: /Portafolio/src/views/login.php");
-    //exit();
-    echo $_POST["submit"];
+    header("location: /Portafolio/src/views/login.php");
+    exit();
 }

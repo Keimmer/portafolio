@@ -5,6 +5,13 @@ body {
     margin: 0px;
 }
 
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    min-height: 100px;
+    resize: none;
+ }
+
 
 /* modificando los links */
 
@@ -18,9 +25,6 @@ a {
 
 .header {
     color: #fff;
-    padding-left: 70px;
-    padding-right: 70px;
-    position: fixed;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -54,12 +58,47 @@ a {
 
 .headerItem {
     display: flex;
-    margin-left: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.headerItem:hover {
+    background-color: #1e6091;
+}
+.headerBoxItem {
+    display: flex;
+    padding: 10px;
+    border-radius: 15px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.inactive {
+    display: none;
+}
+.headerBoxItem:hover {
+    background-color: #1a759f;
+}
+
+.headerItemBox {
+    margin-top: 40px;
+    transform: translateX(-10px);
+    position: inherit;
+    position: fixed;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    background-color: #1e6091;
+}
+.hItemBVisible {
+    display: flex;
 }
 
 .headerItems {
     display: flex;
-    margin-right: 200px;
+    margin-right: 70px;
     margin-left: auto;
 }
 
@@ -101,7 +140,7 @@ a {
 /* estilo del contenedor del logo */
 
 .logoContainer {
-    margin-left: 20px;
+    margin-left: 70px;
     justify-self: flex-start;
 }
 
@@ -110,12 +149,12 @@ a {
 
 .container {
     background-color: #f5faff;
-    margin-top: 100px;
     margin-left: 0px;
     margin-right: 0px;
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding: 80px;
+    min-height: 400px;
     height: 100%;
 }
 
@@ -166,6 +205,16 @@ a {
     padding: 6px;
     border-radius: 5px;
 }
+.btn-sm {
+    background: #fff;
+    cursor: pointer;
+    border: none;
+    width: 80px;
+    font-weight: 600;
+    font-size: 10px;
+    padding: 3px;
+    border-radius: 5px;
+}
 
 .center {
     margin: auto;
@@ -185,7 +234,7 @@ a {
 /* estilo para los formularios */
 
 .form-card {
-     width: 400px;
+     width: 350px;
      border: #000;
      background: linear-gradient(180deg, rgba(118, 200, 147, 1) 0%, rgba(181, 228, 140, 1) 46%, rgba(217, 237, 146, 1) 100%);
      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -194,12 +243,22 @@ a {
      display: flex;
      flex-direction: column;
 }
+.form-label {
+    margin-left: 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    background-color: #52b69a;
+    border-radius: 5px;
+    padding: 2px;
+    font-weight: bold;
+}
 .form-card > h2 {
     color:#fff;
     text-align: center;
     box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .form-field {
+    width: 80%;
     display: flex;
     font-size: 14px;
     padding: 10px;
@@ -225,28 +284,110 @@ a {
     color: #fff;
 }
 .error {
+    position: fixed;
+    z-index: 999;
     padding: 10px;
     background-color: #f94144;
     border-radius: 5px;
     text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
     margin: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    width: 300px;
     font-weight: 800;
     color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, top 0.2s, visibility 0.2s;
 }
+
+.errorVisible {
+    top: 150px;
+    visibility: visible;
+    opacity: 1;
+}
+
 .success {
+    position: fixed;
+    z-index: 999;
     padding: 10px;
-    background-color: #43aa8b;
+    background-color: #52b69a;
     border-radius: 5px;
     text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
     margin: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    width: 300px;
     font-weight: 800;
     color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, top 0.2s, visibility 0.2s;
+}
+
+.successVisible {
+    top: 150px;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* estilos de los blog's */
+.form-card-blog {
+    width: 80%;
+    border: #000;
+    background: linear-gradient(180deg, rgba(118, 200, 147, 1) 0%, rgba(181, 228, 140, 1) 46%, rgba(217, 237, 146, 1) 100%);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.form-card-blog > h2 {
+    color:#fff;
+    text-align: center;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* archivo */
+
+input[type="file"] {
+    display: none;
+}
+.input-file {
+    display: flex;
+    width: 280px;
+    margin: auto;
+    border-radius: 5px;
+    padding: 6px;
+    cursor: pointer;
+    background-color: #52b69a;
+    color: #fff;
+}
+
+.article {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    background: linear-gradient(180deg, rgba(118, 200, 147, 1) 0%, rgba(181, 228, 140, 1) 46%, rgba(217, 237, 146, 1) 100%); ;
+}
+
+.title > h4 {
+    opacity: 50%;
+}
+
+.artimg > img {
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
 }

@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    <script src="/Portafolio/res/js/toast.js" type="module"></script>
     <div class="header">
         <div class="logoContainer">
             <img src="/Portafolio/res/img/logo.svg">
@@ -32,23 +33,38 @@
             <div class="headerItem" id="headerItem">
                 <a href="/Portafolio/index.php">Inicio</a>
             </div>
-            <?php 
-            
-            if (isset($_SESSION["username"])) {
-                echo '<div class="headerItem" id="headerItem"><a href="/Portafolio/src/views/profile.php">'. $_SESSION["username"]. '</a></div>';
-            }else {
-                echo '<div class="headerItem" id="headerItem"><a href="/Portafolio/src/views/login.php">Ingresar</a></div><div class="headerItem" id="headerItem"><a href="/Portafolio/src/views/register.php">Crea tu Cuenta</a></div>';
-            }            
-            
-            ?>
             <div class="headerItem" id="headerItem">
                 <a href="/Portafolio/src/views/proyectos.php">Proyectos</a>
             </div>
             <div class="headerItem" id="headerItem">
                 <a href="/Portafolio/src/views/contacto.php">Contacto</a>
             </div>
-            <div class="headerItem" id="headerItem">
-                <a href="/Portafolio/src/views/blog.php">Blog</a>
+            <div class="headerItem" id="headerItem" <?php if (isset($_SESSION["username"])) { echo '@click="setBlogMActive"'; } ?>>
+                
+                <?php
+                    if (isset($_SESSION["username"])) {
+                        echo 'Blog';
+                        echo '<div v-if="bMenuActive" class="headerItemBox" :class="{ hItemBVisible: mounted}" @mounted="setMounted" @mouseleave="setBlogMActive">';
+                        echo '<div class="headerBoxItem" id="headerItem"><a href="/Portafolio/src/views/bloglist.php">Todos los Blog</a></div>';
+                        echo '<div class="headerBoxItem" id="headerItem"><a href="/Portafolio/src/views/createBlog.php">Crear Blog</a></div>';
+                        echo '</div>';
+                    } else {
+                        echo '<a href="/Portafolio/src/views/bloglist.php">Blog</a>';
+                    }
+                ?>
+            </div>
+            <div class="headerItem" id="headerItem" @click="setActive">
+                Cuenta
+                <div v-if="menuActive" class="headerItemBox" :class="{ hItemBVisible: mounted}" @mouseleave="setActive" @mounted="setMounted">
+                <?php            
+                    if (isset($_SESSION["username"])) {
+                        echo '<div class="headerBoxItem" id="headerItem"><a href="/Portafolio/src/views/profile.php">Perfil de '. $_SESSION["username"]. '</a></div>';
+                        echo '<div class="headerBoxItem" id="headerItem"><a href="/Portafolio/src/controllers/logout.ctl.php">Salir</a></div>';
+                    } else {
+                        echo '<div class="headerBoxItem" id="headerItem"><a href="/Portafolio/src/views/login.php">Ingresar</a></div><div class="headerBoxItem" id="headerItem"><a href="/Portafolio/src/views/register.php">Crea tu Cuenta</a></div>';
+                    }
+                ?>
+                </div>
             </div>
         </div>
         <a class="menu" href="javascript:void(0);" onclick="openMenu()"><i class="fas fa-bars"></i></a>

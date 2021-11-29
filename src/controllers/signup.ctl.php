@@ -5,6 +5,7 @@ if (isset($_POST["submit"])) {
     $name = $_POST["name"];
     $lastName = $_POST["lastname"];
     $email = $_POST["email"];
+    $gender = $_POST["genero"];
     $password = $_POST["password"];
     $repeatPassword = $_POST["repeatPassword"];
 
@@ -37,11 +38,11 @@ if (isset($_POST["submit"])) {
         exit();
     }
     //si no hay ningun error se procede a crear el usuario
-    if ($ops->createUser(new DbConnection, $userName, $name, $lastName, $email, $password)) {
+    if ($ops->createUser(new DbConnection, $userName, $name, $lastName, $email, $password, $gender)) {
         header("location: /Portafolio/src/views/register.php?error=databaseError");
         exit();
     } else {
-        header("location: /Portafolio/src/views/register.php?error=none");
+        header("location: /Portafolio/index.php?success=accountCreated");
         exit();
     }
 }
